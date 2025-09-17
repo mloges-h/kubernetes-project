@@ -1,9 +1,3 @@
-That's an excellent idea. Your command history provides a detailed, chronological record of every step you took. I can use this to create a more accurate and personalized `README.md` that perfectly reflects your unique workflow. It will serve as a fantastic reference for your submission.
-
-Here is a `README.md` that incorporates the specific commands from your history log, making it a highly tailored and professional document.
-
------
-
 ### **Overview**
 
 This repository contains all the necessary files and documentation for a DevOps intern assignment. The project demonstrates the deployment of a Python Flask application with a MongoDB backend on a Kubernetes cluster, with a focus on containerization, orchestration, persistent storage, and public exposure.
