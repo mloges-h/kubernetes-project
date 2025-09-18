@@ -110,9 +110,6 @@ Verified that all Kubernetes resources were deployed successfully with the follo
   * **Autoscaler:** `kubectl get hpa`
 
 -----
-In your `README.md` file, you should include the following explanation for DNS resolution. This answers the specific requirement from your assignment by explaining how the Flask application finds and connects to the MongoDB service.
-
----
 
 ### **6. DNS Resolution**
 
@@ -127,7 +124,7 @@ This approach offers several key benefits:
 * **Service Discovery:** It provides a reliable and built-in method for pods to find other services within the cluster.
 * **Load Balancing:** The DNS record for a service often resolves to multiple pod IPs, allowing for simple load balancing across replicas.
 
-### **Design Choices & Explanations**
+### **7. Design Choices & Explanations**
 
   * **`StatefulSet` for MongoDB:** Chosen for its stable network identity and ability to use Persistent Volume Claims, guaranteeing data persistence even if pods are rescheduled.
   * **`Deployment` for Flask:** Ideal for the stateless application, as it manages replica sets and provides a declarative way to manage the application's lifecycle.
