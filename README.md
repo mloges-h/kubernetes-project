@@ -114,7 +114,7 @@ In your `README.md` file, you should include the following explanation for DNS r
 
 ---
 
-### **8. DNS Resolution**
+### **6. DNS Resolution**
 
 Within a Kubernetes cluster, DNS resolution allows pods to discover and communicate with each other using simple, human-readable names instead of hardcoding IP addresses. Kubernetes automatically configures a DNS server for the cluster, which manages records for all services and pods.
 
