@@ -106,6 +106,9 @@ This section details the steps to deploy the application on a Kubernetes cluster
         docker exec nginx-proxy nginx -s reload
         
 -----
+###  **While curl from server
+
+<img width="1135" height="106" alt="image" src="https://github.com/user-attachments/assets/b215cec6-f96c-4adf-93e5-91ccc8f2bf32" />
 
 ### **Resource Verification**
 
