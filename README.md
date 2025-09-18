@@ -35,6 +35,7 @@ This section outlines the initial setup and local validation of the application 
       * Verified the local application was running and connected to the database:
         
         curl http://localhost:5000/
+
         curl -X POST -H "Content-Type: application/json" -d '{"sampleKey":"sampleValue"}' http://localhost:5000/data
         
 
@@ -49,13 +50,17 @@ This section details the steps to deploy the application on a Kubernetes cluster
       * Downloaded and verified kubectl:
         
         curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+
         curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+
         echo "$(cat kubectl.sha256) kubectl" | sha256sum --check
+
         sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
         
       * Installed Minikube using the .deb package:
         
         curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
+
         sudo dpkg -i minikube_latest_amd64.deb
         
 
@@ -68,18 +73,19 @@ This section details the steps to deploy the application on a Kubernetes cluster
       * Logged into Docker Hub and pushed the image to a container registry:
         
         docker login
+
         docker push mlogesh/flask-mongodb-app:1.0
         
 
 3.  **Kubernetes Manifests**
 
       * Created the following YAML files to define the Kubernetes resources:
-          * db-creds.yaml (for database authentication)
-          * mongodb-statefulset.yaml
-          * mongodb-service.yaml
-          * flask-deployment.yaml
-          * flask-service.yaml
-          * hpa.yaml
+          1 db-creds.yaml (for database authentication)
+          2 mongodb-statefulset.yaml
+          3 mongodb-service.yaml
+          4 flask-deployment.yaml
+          5 flask-service.yaml
+          6 hpa.yaml
 
 4.  **Deployment to Minikube**
 
@@ -94,10 +100,11 @@ This section details the steps to deploy the application on a Kubernetes cluster
       * The NGINX container was run in --network=host mode to ensure it could connect to the Minikube service.
         
         docker run --name nginx-proxy --network=host -d nginx
+
         docker cp nginx.conf nginx-proxy:/etc/nginx/nginx.conf
+
         docker exec nginx-proxy nginx -s reload
         
-
 -----
 
 ### **Resource Verification**
