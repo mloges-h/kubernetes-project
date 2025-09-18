@@ -134,6 +134,13 @@ This approach offers several key benefits:
 
 -----
 
+### **8. Resource Management (Cookie Point)**
+
+* **Requests:** Kubernetes uses resource requests for scheduling. When a pod is created, the scheduler ensures the node has at least the requested CPU and memory available. This guarantees that your application has the minimum resources needed to run.
+* **Limits:** Limits prevent a pod from consuming more resources than a specified maximum. This protects other pods on the same node from resource starvation and ensures the stability of the cluster.
+
+-----
+
 ### **Testing Scenarios**
 
   * **Application Functionality:**
