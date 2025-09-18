@@ -110,6 +110,22 @@ Verified that all Kubernetes resources were deployed successfully with the follo
   * **Autoscaler:** `kubectl get hpa`
 
 -----
+In your `README.md` file, you should include the following explanation for DNS resolution. This answers the specific requirement from your assignment by explaining how the Flask application finds and connects to the MongoDB service.
+
+---
+
+### **8. DNS Resolution**
+
+Within a Kubernetes cluster, DNS resolution allows pods to discover and communicate with each other using simple, human-readable names instead of hardcoding IP addresses. Kubernetes automatically configures a DNS server for the cluster, which manages records for all services and pods.
+
+When your Flask application pod needs to connect to the MongoDB database, it doesn't need to know the MongoDB pod's IP address. Instead, it uses the **service name** as the hostname.
+
+For example, since your MongoDB service is named `mongodb`, your Flask application can simply connect to `mongodb:27017`. The DNS system within Kubernetes automatically resolves the `mongodb` hostname to the correct internal ClusterIP address of the MongoDB service.
+
+This approach offers several key benefits:
+* **Decoupling:** The application is no longer dependent on a specific IP address. If the MongoDB pod or service IP changes, the connection string in the Flask application remains the same.
+* **Service Discovery:** It provides a reliable and built-in method for pods to find other services within the cluster.
+* **Load Balancing:** The DNS record for a service often resolves to multiple pod IPs, allowing for simple load balancing across replicas.
 
 ### **Design Choices & Explanations**
 
